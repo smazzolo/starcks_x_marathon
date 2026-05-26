@@ -170,16 +170,15 @@
   .pricebox .total .lbl{font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;font-family:'Sometype Mono',monospace;line-height:1.3;flex:0 0 auto;}
   .pricebox .total .big{font-size:27px;font-weight:800;letter-spacing:-.03em;transition:color .2s;text-align:right;white-space:nowrap;line-height:1;}
   .pricebox .total .big small{font-size:12px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:3px;}
-  .deepdive-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:18px;padding:13px 18px;border-radius:12px;font-weight:800;font-size:14px;letter-spacing:.01em;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s;position:relative;z-index:5;cursor:pointer;}
-  .deepdive-btn svg{width:17px;height:17px;flex:0 0 auto;}
+  .deepdive-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:18px;padding:14px 18px;border-radius:12px;font-weight:800;font-size:14.5px;letter-spacing:.01em;text-decoration:none;color:#fff;transition:transform .15s,box-shadow .15s,background .15s;position:relative;z-index:2;cursor:pointer;}
+  .deepdive-btn svg{width:17px;height:17px;flex:0 0 auto;fill:#fff;}
   .deepdive-btn .arr{margin-left:2px;font-weight:700;transition:transform .15s;}
   .deepdive-btn:hover .arr{transform:translateX(3px);}
-  .card.light .deepdive-btn{background:var(--ink-2);color:#fff;}
-  .card.light .deepdive-btn svg{fill:var(--accent-2);}
-  .card.light .deepdive-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px -8px rgba(0,46,90,.55);}
-  .card.dark .deepdive-btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16);}
-  .card.dark .deepdive-btn svg{fill:var(--accent);}
-  .card.dark .deepdive-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.13);box-shadow:0 10px 26px -8px rgba(0,4,12,.7);}
+  .deepdive-btn:hover{transform:translateY(-2px);}
+  .diff-col:nth-child(1) .deepdive-btn{background:#0a3158;}
+  .diff-col:nth-child(1) .deepdive-btn:hover{background:#0c3c6c;box-shadow:0 10px 26px -8px rgba(0,8,24,.6);}
+  .diff-col:nth-child(2) .deepdive-btn{background:#ee3449;}
+  .diff-col:nth-child(2) .deepdive-btn:hover{background:#d82a3e;box-shadow:0 10px 26px -8px rgba(120,8,20,.5);}
   .flash{animation:flash .45s;}
   @keyframes flash{0%{color:var(--accent-2);}100%{color:inherit;}}
   .valuechip{margin:14px 0 0;padding:13px 15px;border-radius:11px;font-size:13.5px;line-height:1.45;background:rgba(229,30,42,.10);border:1px solid rgba(229,30,42,.30);color:#f3c7ca;}
@@ -194,7 +193,9 @@
   .diff-inner::after{content:"VS";position:absolute;right:-10px;bottom:-34px;font-size:220px;font-weight:800;opacity:.07;letter-spacing:-.05em;}
   .diff-inner h4{font-family:'Sometype Mono',monospace;font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px;opacity:.85;}
   .diff-inner .diff-title{font-size:38px;font-weight:800;letter-spacing:-.025em;line-height:1.02;margin-bottom:30px;}
-  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;position:relative;z-index:1;}
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;position:relative;z-index:1;align-items:stretch;}
+  .diff-col{display:flex;flex-direction:column;}
+  .diff-col .diff-bul{flex:1 1 auto;}
   .diff-col h5{font-size:25px;font-weight:800;margin-bottom:12px;letter-spacing:-.02em;display:flex;align-items:center;gap:11px;}
   .diff-col h5::before{content:"";width:11px;height:11px;border-radius:2px;transform:rotate(45deg);flex:0 0 auto;}
   .diff-col:nth-child(1) h5::before{background:#2bc5ad;}
@@ -283,7 +284,6 @@
             <div class="row"><span>Setup iniziale</span><span>20.000€</span></div>
             <div class="row"><span>Mensile</span><span>~13.333€/mese</span></div>
             <div class="total"><span class="lbl">Totale<br>12 mesi</span><span class="big">180.000€ <small>+ IVA</small></span></div>
-            <a class="deepdive-btn" href="https://docs.google.com/spreadsheets/d/1Or-YUpV_FTSL4Zo9rLIH8OSzniIC2eeOtEL5GEm5mPA/edit?gid=1780111935#gid=1780111935" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5zM8 13h8v1.6H8V13zm0 3.2h8v1.6H8v-1.6zM8 9.8h4v1.6H8V9.8z"/></svg>Deep dive dei contenuti<span class="arr">→</span></a>
           </div>
         </article></div>
         <div class="card-wrap dark-wrap"><article class="card dark">
@@ -347,7 +347,6 @@
             <div class="row"><span>Setup iniziale</span><span id="r-una">11.000€</span></div>
             <div class="row"><span>Mensile</span><span id="r-mens">9.500€/mese</span></div>
             <div class="total"><span class="lbl">Totale<br>12 mesi</span><span class="big" id="r-tot">125.000€ <small>+ IVA</small></span></div>
-            <a class="deepdive-btn" href="https://docs.google.com/spreadsheets/d/1Or-YUpV_FTSL4Zo9rLIH8OSzniIC2eeOtEL5GEm5mPA/edit?gid=1780111935#gid=1780111935" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5zM8 13h8v1.6H8V13zm0 3.2h8v1.6H8v-1.6zM8 9.8h4v1.6H8V9.8z"/></svg>Deep dive dei contenuti<span class="arr">→</span></a>
           </div>
         </article></div>
       </div>
@@ -358,8 +357,8 @@
       <div class="diff-inner">
         <div class="diff-title">La differenza, in chiaro</div>
         <div class="diff-grid">
-          <div class="diff-col"><h5>Starcks 360</h5><ul class="diff-bul"><li>Esclusiva su <b>community ZonaFanta</b></li><li>Esclusiva su <b>community Starcks</b> + gamification</li><li>Esclusiva su <b>community tipster Zona1x2</b></li><li>App FantaMarathon inclusa</li><li>Asset già attivi, dal giorno uno</li></ul></div>
-          <div class="diff-col"><h5>Social di Marathon</h5><ul class="diff-bul"><li>Creazione di <b>@marathon.live</b></li><li><b>@fantamarathon</b> con community acquisita</li><li>Motore organico di video (120 profili)</li><li>App FantaMarathon inclusa</li><li>Asset di proprietà Marathon</li></ul></div>
+          <div class="diff-col"><h5>Starcks 360</h5><ul class="diff-bul"><li>Esclusiva su <b>community ZonaFanta</b></li><li>Esclusiva su <b>community Starcks</b> + gamification</li><li>Esclusiva su <b>community tipster Zona1x2</b></li><li>App FantaMarathon inclusa</li><li>Asset già attivi, dal giorno uno</li></ul><a class="deepdive-btn" href="https://docs.google.com/spreadsheets/d/1Or-YUpV_FTSL4Zo9rLIH8OSzniIC2eeOtEL5GEm5mPA/edit?gid=1780111935#gid=1780111935" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5zM8 13h8v1.6H8V13zm0 3.2h8v1.6H8v-1.6zM8 9.8h4v1.6H8V9.8z"/></svg>Deep dive dei contenuti<span class="arr">→</span></a></div>
+          <div class="diff-col"><h5>Social di Marathon</h5><ul class="diff-bul"><li>Creazione di <b>@marathon.live</b></li><li><b>@fantamarathon</b> con community acquisita</li><li>Motore organico di video (120 profili)</li><li>App FantaMarathon inclusa</li><li>Asset di proprietà Marathon</li></ul><a class="deepdive-btn" href="https://docs.google.com/spreadsheets/d/1Or-YUpV_FTSL4Zo9rLIH8OSzniIC2eeOtEL5GEm5mPA/edit?gid=1780111935#gid=1780111935" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5zM8 13h8v1.6H8V13zm0 3.2h8v1.6H8v-1.6zM8 9.8h4v1.6H8V9.8z"/></svg>Deep dive dei contenuti<span class="arr">→</span></a></div>
           <div class="diff-line">Non sono due strade alternative: <b>possono convivere</b>. Il <em>360</em> accende da subito un bacino di oltre 250K utenti già caldi — visibilità immediata. La <em>Social</em> lavora sul tempo: costruisce una community fatta di <b>persone vere</b>, attratte da contenuti organici, che diventa un <b>asset di Marathon che vale di più ogni anno che passa</b>.</div>
         </div>
       </div>
