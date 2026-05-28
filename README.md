@@ -9,7 +9,7 @@ La pagina permette di esplorare nel dettaglio ogni voce, confrontare le due stra
 
 ## Sito live
 
-👉 **https://smazzolo.github.io/starcks_x_marathon/**
+👉** https://marathonbet2026.netlify.app/**
 
 > Link riservato, da condividere direttamente con gli interessati. La pagina è esclusa dall'indicizzazione dei motori di ricerca.
 
