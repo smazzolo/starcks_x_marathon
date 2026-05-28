@@ -134,6 +134,7 @@
   .demo-btn{display:inline-flex;align-items:center;gap:8px;margin:14px 0 2px;padding:12px 20px;border-radius:10px;background:var(--accent-2);color:#fff;font-weight:800;font-size:14px;text-decoration:none;transition:transform .15s,box-shadow .15s;position:relative;z-index:5;cursor:pointer;}
   .demo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(43,197,173,.35);}
   .demo-btn::after{content:"→";font-weight:700;}
+  .demo-btn.no-arrow::after{content:none;}
   .stk-logo{display:inline-block;vertical-align:middle;}
   .stk-logo svg{height:26px;width:auto;display:block;}
   .stk-h3{display:flex;align-items:center;gap:9px;font-size:29px;font-weight:800;letter-spacing:-.02em;margin:10px 0 4px;line-height:1.05;}
@@ -340,7 +341,7 @@
               <li>Creazione + warm-up dei <b>120 profili</b> della rete organica</li>
               <li>Lancio delle pagine @marathon.live e @fantamarathon</li>
               <li>Creazione di un <b>profilo Telegram ad hoc</b>: collega gli utenti da marathon.live a Marathon consegnando voucher e bonus</li>
-              <li class="star">Deploy dell'HTML del minigame (flipper) su marathon.live: il ponte diretto verso Marathon, che porta gli utenti sulla piattaforma tramite il riscatto del voucher ottenuto dal profilo Telegram. Veicolo di traffico e garanzia di compliance.</li>
+              <li class="star">Deploy dell'HTML del minigame (flipper) su marathon.live: il ponte diretto verso Marathon, che porta gli utenti sulla piattaforma tramite il riscatto del voucher ottenuto dal profilo Telegram. Veicolo di traffico e garanzia di compliance. <a class="demo-btn no-arrow" href="https://www.zonafanta.com/test-widget/" target="_blank" rel="noopener" onclick="event.stopPropagation()">→ Prova la demo del minigame Mini</a></li>
             </ul></div></div></div>
           </div>
           <div class="pricebox">
